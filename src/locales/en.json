@@ -1,0 +1,17 @@
+{
+  "addNew": "Add a new {0}",
+  "allSessions": "All Talks",
+  "proposedSessions": "Proposed Talks",
+  "acceptedSessions": "Accepted Talks",
+  "pastSessions": "Past Talks",
+  "mySessions": "My Talks",
+  "calendarView": "Calendar",
+  "timelineView": "Timeline",
+  "session": "Talk | Talks",
+  "logOut": "Log out",
+  "save": "Save",
+  "cancel": "Cancel",
+  "permissionDenied": "You don't have permission for that.",
+  "unhandledFirebaseError": "An unhandled Firebase error occured.",
+  "unhandledError": "An unhandled error occured."
+}
