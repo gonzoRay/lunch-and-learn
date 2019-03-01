@@ -88,15 +88,15 @@ export default class SessionList extends Vue {
     this.loadTabFromRouteParams();
   }
 
-  get proposedOrdered(): Array<Session> {
+  get proposedOrdered(): Session[] {
     return orderBy(this.proposed, 'datetime');
   }
 
-  get acceptedOrdered(): Array<Session> {
+  get acceptedOrdered(): Session[] {
     return orderBy(this.accepted, 'datetime');
   }
 
-  get pastOrdered(): Array<Session> {
+  get pastOrdered(): Session[] {
     return orderBy(this.past, 'datetime');
   }
 

@@ -98,7 +98,7 @@ export default class TimelineView extends Vue {
     this.$router.replace(`/sessions/${id}/detail`);
   }
 
-  get timelineEventsOrdered(): Array<Session> {
+  get timelineEventsOrdered(): Session[] {
     return orderBy(this.timelineEvents, 'startTime');
   }
 

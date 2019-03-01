@@ -100,7 +100,9 @@ export default class AddSessionForm extends Mixins(SessionForm) {
   addForm = true;
   showDateMenu = false;
 
+
   @Getter('newSession')
+  /* tslint:disable variable-name */
   private _newSession!: Session;
 
   @Getter
@@ -131,7 +133,7 @@ export default class AddSessionForm extends Mixins(SessionForm) {
       this.$store.dispatch('INIT_NEW_SESSION', null);
       this.hideAddSessionModal();
     } catch (error) {
-
+      this.$store.dispatch('showAlert', 'There was a problem during save.');
     }
   }
 
