@@ -2,23 +2,7 @@
 #
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
-version: 2.1
-orbs:
-  firebase-deploy: cloudliner/firebase-deploy@0.0.2
-commands:
-  deploy:
-    description: Deploy to firebase
-    parameters:
-      token:
-        type: string
-        description: Firebase Deploy Token
-    steps:
-      - run:
-          name: Install Firebase Tools
-          command: npm install --prefix=./firebase-deploy firebase-tools
-      - run:
-          name: Deploy to Firebase
-          command: ./firebase-deploy/node_modules/.bin/firebase deploy --token=<< parameters.token >>
+version: 2
   jobs:
     build:
       docker:
@@ -51,7 +35,4 @@ commands:
 
         # check build for any errors
         - run: npm run lint && npm run build
-    deploy:
-      steps:
-        - firebase-deploy/deploy:
-          token: $FIREBASE_DEPLOY_TOKEN
+        - run: npm run deploy:ci
