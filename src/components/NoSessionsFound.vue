@@ -3,7 +3,7 @@
     <span :class="[$vuetify.breakpoint.mdAndUp ? 'display-1' : 'title']" v-t="'emptyList'"></span>
     <p
       v-if="!!hideAddNew === false"
-      :class="['button-link', $vuetify.breakpoint.mdAndUp ? 'headline' : 'subheading']"
+      :class="['secondary--text', 'button-link', $vuetify.breakpoint.mdAndUp ? 'headline' : 'subheading']"
       @click="showAddSessionModal()"
     >{{ getAddNewButtonText() }}</p>
   </div>
