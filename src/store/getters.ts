@@ -118,6 +118,7 @@ export const getters: GetterTree<AppState, any> = {
           id: session.id,
           title: session.title,
           description: session.description,
+          tags: session.tags,
           startTime: session.datetime,
           speaker: getters.getSessionSpeaker(session.acceptedByUid)
         };

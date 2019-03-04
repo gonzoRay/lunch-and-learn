@@ -2,8 +2,9 @@
   <div class="flex-fix">
     <h5 :class="[$vuetify.breakpoint.smAndUp ? 'display-1' : 'headline']" v-t="'mySessions'"></h5>
     <v-list three-line>
-      <template v-for="item in mySessions">
+      <template v-for="(item, index) in mySessions">
         <MySessionListItem :key="item.id" :item="item"/>
+        <v-divider v-if="index + 1 < mySessions.length" :key="`mySessions-${index}`"></v-divider>
       </template>
     </v-list>
     <NoSessionsFound hideAddNew="true" v-if="!mySessions.length"/>

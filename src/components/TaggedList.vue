@@ -7,8 +7,9 @@
       </v-chip>
     </h5>
     <v-list three-line v-show="tagged.length">
-      <template v-for="item in tagged">
+      <template v-for="(item, index) in tagged">
         <ProposedListItem :key="item.id" :item="item"/>
+        <v-divider v-if="index + 1 < tagged.length" :key="`tagged-${index}`"></v-divider>
       </template>
     </v-list>
     <NoSessionsFound hideAddNew="true" v-if="!tagged.length"/>

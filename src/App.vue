@@ -202,6 +202,10 @@ export default class App extends Vue {
 </script>
 
 <style lang="stylus">
+* {
+  user-select: none;
+}
+
 li {
   cursor: pointer;
 }
@@ -211,7 +215,7 @@ li.router-link-active {
     color: var(--v-accent-base);
   }
 
-  color: var(--v-primary-base);
+  color: var(--v-primary-darken1);
 }
 
 .welcome-msg {

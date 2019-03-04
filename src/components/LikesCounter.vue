@@ -2,7 +2,7 @@
   <v-badge
     :class="['no-select', $vuetify.breakpoint.xsOnly ? 'small-badge' : '']"
     value="likeCount"
-    color="secondary"
+    color="primary"
     transition="fab-transition"
   >
     <v-icon :color="getLikeColor()" large @click.prevent="likeSession(item)">thumb_up</v-icon>
