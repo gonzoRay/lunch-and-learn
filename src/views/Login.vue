@@ -3,17 +3,25 @@
     <v-layout row wrap align-center>
       <v-flex class="text-xs-center">
         <App-Logo :appName="appName"></App-Logo>
-
-        <v-btn
-          large
-          color="primary"
-          flat
-          outline
-          class="google-logo"
-          @click.prevent="signInWithGoogle"
-        >
-          <img height="25px" src="../assets/google-logo.png">Sign in with Google
-        </v-btn>
+        <div class="title font-weight-light">{{ 'siteDescription' | t}}</div>
+        <v-layout column>
+          <v-flex xs4>&nbsp;</v-flex>
+          <v-flex xs4>
+            <v-btn
+              large
+              color="primary"
+              flat
+              outline
+              class="google-logo"
+              @click.prevent="signInWithGoogle"
+            >
+              <img height="25px" src="../assets/google-logo.png">Sign in with Google
+            </v-btn>
+          </v-flex>
+          <v-flex xs4>
+            <v-btn large color="info" flat outline @click.prevent="signInAsGuest">Sign in as Guest</v-btn>
+          </v-flex>
+        </v-layout>
       </v-flex>
     </v-layout>
   </v-container>
@@ -50,6 +58,16 @@ export default class Login extends Vue {
         this.$router.replace('/sessions');
       })
       .catch(err => alert(err.message || err));
+  }
+
+  private signInAsGuest() {
+    const self = this;
+    firebase
+      .auth()
+      .signInAnonymously()
+      .catch((error) => {
+        self.$store.dispatch('handleFirebaseError', error);
+      });
   }
 }
 </script>

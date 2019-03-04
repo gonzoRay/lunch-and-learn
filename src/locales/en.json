@@ -12,6 +12,7 @@
   "save": "Save",
   "cancel": "Cancel",
   "permissionDenied": "You don't have permission for that.",
+  "siteDescription": "Lunch & Learn is an app your team can use to present ideas and topics to enrich collaboration and promote cross team learning.",
   "unhandledFirebaseError": "An unhandled Firebase error occured.",
   "unhandledError": "An unhandled error occured."
 }

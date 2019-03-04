@@ -100,7 +100,12 @@ export const actions: ActionTree<AppState, any> = {
       .where('uid', '==', getters.currentUserId)
       .get()
       .then((snapshot: firebase.firestore.QuerySnapshot) => {
-        userRef = snapshot.docs[0].ref;
+        userRef = snapshot.docs[0] && snapshot.docs[0].ref;
+
+        if (!userRef) {
+          return;
+        }
+
         return userRef
           .update({ userPrefs: prefs })
           .catch(error => dispatch('handleFirebaseError', error));

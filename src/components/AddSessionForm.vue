@@ -68,6 +68,13 @@
         </v-form>
       </v-card-text>
       <v-card-actions v-show="$vuetify.breakpoint.smAndUp">
+        <v-spacer/>
+        <v-flex v-if="isGuest">
+          <span class="subheading font-weight-regular warning--text">
+            <strong>Note:</strong>
+            {{ 'submittingDisabled' | t}}
+          </span>
+        </v-flex>
         <v-spacer></v-spacer>
         <v-btn
           flat
@@ -78,7 +85,7 @@
         <v-btn
           flat
           aria-label="save new"
-          :disabled="!addForm"
+          :disabled="!addForm || isGuest"
           form="addForm"
           type="submit"
         >{{ 'submitSession' | t }}</v-btn>
@@ -108,11 +115,15 @@ export default class AddSessionForm extends Mixins(SessionForm) {
   @Getter
   private showAddModal!: boolean;
 
+  @Getter
+  private allTags!: string[];
+
+  @Getter
+  private isGuest!: boolean;
+
   @Mutation
   private hideAddSessionModal: any;
 
-  @Getter
-  private allTags!: string[];
 
   constructor() {
     super();
@@ -160,7 +171,8 @@ export default class AddSessionForm extends Mixins(SessionForm) {
     "createNewSessionMobile": "New talk",
     "title": "Title of talk",
     "briefDescription": "Enter a brief description of the talk",
-    "submitSession": "submit talk"
+    "submitSession": "submit talk",
+    "submittingDisabled": "This feature is disabled for guests."
   }
 }
 </i18n>

@@ -5,6 +5,8 @@ import addMinutes from 'date-fns/add_minutes';
 import format from 'date-fns/format';
 import isBefore from 'date-fns/is_before';
 
+import state from './state';
+
 export const getters: GetterTree<AppState, any> = {
   appName: state => state.appName,
   appTitle: state => state.appName.replace(/<(?:.|\n)*?>/gm, ''),
@@ -101,6 +103,7 @@ export const getters: GetterTree<AppState, any> = {
   allTags: state => state.allTags,
   currentSession: state => state.currentSession,
   newSession: state => state.newSession,
+  isGuest: state => state.currentUser && !state.currentUser.email,
   currentUser: state => state.currentUser,
   currentUserId: state => {
     return state.currentUser && state.currentUser.uid

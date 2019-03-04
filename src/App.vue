@@ -172,11 +172,11 @@ export default class App extends Vue {
 
   getFirstName(): string {
     const currentUserDisplayName = this.currentUser ? this.currentUser.displayName : '';
-    return currentUserDisplayName ? currentUserDisplayName.split(' ')[0] : '';
+    return currentUserDisplayName ? currentUserDisplayName.split(' ')[0] : 'Guest';
   }
 
   getUsername(): string {
-    return this.currentUser && this.currentUser.displayName || '';
+    return this.currentUser && this.currentUser.displayName || 'Guest user';
   }
 
   getUserEmail() {
@@ -184,7 +184,11 @@ export default class App extends Vue {
   }
 
   getUserPhotoUrl() {
-    return this.currentUser ? this.currentUser.photoURL : '';
+    let avatarUrl = require('@/assets/default-avatar.png');
+    if (this.currentUser && this.currentUser.photoURL) {
+      avatarUrl = this.currentUser.photoURL;
+    }
+    return avatarUrl;
   }
 
   getCurrentYear() {
