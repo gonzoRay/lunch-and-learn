@@ -34,15 +34,15 @@
             class="mobile-truncate"
           >{{ event.description.substring(0, 35) + '...' }}</v-card-text>
           <v-card-text v-if="$vuetify.breakpoint.smAndUp">{{ event.description }}</v-card-text>
+
           <v-card-actions class="mb-1">
-            <v-layout row>
+            <v-layout v-if="$vuetify.breakpoint.xsOnly" justify-center>
+              <likes-counter :item="event"></likes-counter>
+            </v-layout>
+            <v-layout row v-if="$vuetify.breakpoint.smAndUp">
               <v-flex xs10>
                 <span class="tags">
-                  <v-chip
-                    v-for="(tag, index) in event.tags"
-                    :key="`tag-${index}`"
-                    :small="$vuetify.breakpoint.xsOnly"
-                  >{{ tag }}</v-chip>
+                  <v-chip v-for="(tag, index) in event.tags" :key="`tag-${index}`">{{ tag }}</v-chip>
                 </span>
               </v-flex>
               <v-flex xs2>
