@@ -31,8 +31,8 @@
 
           <v-card-text
             v-if="$vuetify.breakpoint.xsOnly"
-            class="mobile-truncate"
-          >{{ event.description.substring(0, 35) + '...' }}</v-card-text>
+            class="mobile-description"
+          >{{ event.description.substring(0, 60) + '...' }}</v-card-text>
           <v-card-text v-if="$vuetify.breakpoint.smAndUp">{{ event.description }}</v-card-text>
 
           <v-card-actions class="mb-1">
@@ -114,7 +114,8 @@ export default class TimelineView extends Vue {
 </script>
 
 <style lang="stylus">
-.mobile-truncate {
+.mobile-description {
+  padding-top: 0;
   min-height: 100px;
   max-height: 100px;
 }
