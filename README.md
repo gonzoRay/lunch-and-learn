@@ -16,6 +16,18 @@ It also uses Firebase for user authentication, hosting and [Cloud Functions](htt
 
 This project uses [Vuetify](https://vuetifyjs.com/en/) and Stylus for CSS. Vuetify is a set of components based on CSS Flexbox and offers a world class set of reusable components.
 
+## TODO
+
+- [x] feat: calendar view
+- [x] feat: timeline view
+- [x] feat: filter by tag
+- [ ] feat: export to external calendar
+- [ ] feat: ability to comment on a topic
+- [ ] tech: move "like" to Firebase cloud function
+- [ ] tech: get automatic deploy working
+- [ ] tech: add unit tests w/ Jest
+- [ ] tech: add integration tests w/ Cypress
+
 ## Project setup
 
 ```
@@ -32,12 +44,6 @@ npm run serve
 
 ```
 npm run build
-```
-
-### Run your tests
-
-```
-npm run test
 ```
 
 ### Lints and fixes files
