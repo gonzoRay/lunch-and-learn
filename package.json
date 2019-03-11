@@ -19,7 +19,6 @@
     "vue": "^2.6.2",
     "vue-cal": "^1.25.0",
     "vue-class-component": "^6.3.2",
-    "vue-firestore": "^0.3.16",
     "vue-i18n": "^8.8.0",
     "vue-i18n-filter": "^0.1.4",
     "vue-property-decorator": "^7.3.0",

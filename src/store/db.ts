@@ -1,6 +1,3 @@
-import Vue from 'vue';
-import VueFirestore from 'vue-firestore';
-
 import 'firebase/auth';
 import 'firebase/firestore';
 import firebaseConfig from '@/firebase.config';
@@ -9,8 +6,6 @@ import firebase from 'firebase/app';
 import { store } from '@/store';
 import state from '@/store/state';
 import { Session, SessionUser } from '@/types';
-
-Vue.use(VueFirestore);
 
 firebase.initializeApp(firebaseConfig);
 
